@@ -4,19 +4,20 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
 
 trigger:
-- main
+  - main
 
-pool:
-  vmImage: ubuntu-latest
+resources:
+  containers:
+    - container: mydocker
+      image: ubuntu:latest
+      endpoint: mydockerhub
 
-steps:
-- task: Maven@3
-  inputs:
-    mavenPomFile: 'pom.xml'
-    mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.8'
-    jdkArchitectureOption: 'x64'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'package'
+jobs:
+- job: Build
+  pool:
+    vmImage: 'ubuntu-latest'
+  container: mydocker
+  steps:
+    - script: |
+        echo "This script runs inside a Docker container"
+      displayName: 'Run a script inside the Docker container'
