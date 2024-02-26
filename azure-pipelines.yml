@@ -10,7 +10,6 @@ resources:
   containers:
     - container: mydocker
       image: ubuntu:latest
-      endpoint: mydockerhub
 
 jobs:
 - job: Build
