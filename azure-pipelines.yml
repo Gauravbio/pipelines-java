@@ -10,7 +10,8 @@ jobs:
 - job: Build
   pool:
     name: self-hosted
-  container: mydocker
+  container:
+    image: azp-agent:linux  
   steps:
     - script: |
         echo "This script runs inside a Docker container"
