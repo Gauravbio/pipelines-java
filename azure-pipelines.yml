@@ -10,6 +10,8 @@ jobs:
 - job: Build
   pool:
     name: self-hosted
+  container:
+    image: ubuntu:latest
   steps:
     - script: |
         echo "This script runs inside a Docker container"
