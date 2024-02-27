@@ -13,6 +13,8 @@ jobs:
   container:
     image: ubuntu:latest
     options: --privileged 
+    volumes: 
+      - /azp/_work/_tool
   steps:
     - script: |
         echo "This script runs inside a Docker container"
