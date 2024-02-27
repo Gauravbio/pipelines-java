@@ -12,6 +12,7 @@ jobs:
     name: self-hosted
   container:
     image: ubuntu:latest
+    options: --privileged 
   steps:
     - script: |
         echo "This script runs inside a Docker container"
