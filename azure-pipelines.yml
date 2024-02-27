@@ -6,15 +6,10 @@
 trigger:
   - main
 
-resources:
-  containers:
-    - container: mydocker
-      image: ubuntu:latest
-
 jobs:
 - job: Build
   pool:
-    vmImage: 'ubuntu-latest'
+    name: self-hosted
   container: mydocker
   steps:
     - script: |
