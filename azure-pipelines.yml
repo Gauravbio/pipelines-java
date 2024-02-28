@@ -10,12 +10,12 @@ jobs:
 - job: Build
   pool:
     name: default
+  env:
+    PATH: "/usr/bin:$PATH"
   container:
     image: ubuntu:latest
     volumes:
       - /usr/local/bin/node:/usr/bin/node
-    environment:
-      PATH: "/usr/bin:$PATH"
   steps:
     - script: |
         echo "This script runs inside a Docker container"
