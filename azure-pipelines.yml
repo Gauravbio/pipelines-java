@@ -13,7 +13,7 @@ jobs:
   container:
     image: ubuntu:latest
     volumes:
-      - /usr/local/bin:/host_bin  
+      - /usr/local/bin/node:/usr/bin/node
   steps:
     - script: |
         echo "This script runs inside a Docker container"
