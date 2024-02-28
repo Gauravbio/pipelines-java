@@ -8,8 +8,6 @@ trigger:
 
 jobs:
 - job: Build
-  pool:
-    name: self-hosted
   container:
     image: ubuntu:latest
     options: --privileged 
