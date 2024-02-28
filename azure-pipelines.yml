@@ -17,6 +17,7 @@ jobs:
       - /var/run/docker.sock:/var/run/docker.sock
       - /azp/_work:/azp/_work
       - /azp/_temp:/azp/_temp
+      - /azp/_tool:/azp/_tool
   steps:
     - script: |
         echo "This script runs inside a Docker container"
