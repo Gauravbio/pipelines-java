@@ -15,10 +15,6 @@ jobs:
     options: --privileged 
     volumes: 
       - /var/run/docker.sock:/var/run/docker.sock
-      - azp_workspace:/azp/
-      - azp_workspace_externals:/azp/externals
-      - azp_workspace_work_temp:/azp/_work/_temp
-      - azp_workspace_work_1:/azp/_work/1
   steps:
     - script: |
         echo "This script runs inside a Docker container"
