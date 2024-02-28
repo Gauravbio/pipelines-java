@@ -13,9 +13,7 @@ jobs:
   container:
     image: ubuntu:latest
     volumes:
-      - type: bind
-        source: /usr/local/bin/node  # Replace with the path from step 1 (e.g., /usr/local/bin)
-        target: /usr/local/bin
+      - /usr/local/bin:/host_bin  
   steps:
     - script: |
         echo "This script runs inside a Docker container"
