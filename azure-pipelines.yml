@@ -12,9 +12,6 @@ jobs:
     name: default
   container:
     image: ubuntu:latest
-    options: --privileged 
-    volumes: 
-      - /var/run/docker.sock:/var/run/docker.sock
   steps:
     - script: |
         echo "This script runs inside a Docker container"
