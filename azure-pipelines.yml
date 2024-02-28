@@ -16,7 +16,7 @@ jobs:
     volumes: 
       - /var/run/docker.sock:/var/run/docker.sock
       - azp_workspace:/azp/
-      - azp_workspace/externals:/azp/externals
+      - azp_workspace_externals:/azp/externals
   steps:
     - script: |
         echo "This script runs inside a Docker container"
