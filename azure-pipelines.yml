@@ -16,5 +16,8 @@ jobs:
       - /usr/local/bin:/usr/local/bin
   steps:
     - script: |
+        export PATH=$PATH:/usr/local/bin  # Add /usr/local/bin to the $PATH
+        echo "This script runs inside a Docker container"
+        node --version  # Example Node.js command
         echo "This script runs inside a Docker container"
       displayName: 'Run a script inside the Docker container'
