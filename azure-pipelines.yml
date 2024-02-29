@@ -11,7 +11,9 @@ jobs:
   pool:
     name: default
   container:
-    image: node:latest
+    image: ubuntu:latest
+  volumes:
+    - /usr/local/bin:/usr/local/bin
   steps:
     - script: |
         echo "This script runs inside a Docker container"
